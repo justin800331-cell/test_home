@@ -1,82 +1,220 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>청년 경제 뉴스</title>
-<style>
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #fff;
-    color: #222;
-    margin: 0;
-    padding: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 2rem;
-    margin: 0;
-  }
-  .news-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .news-item {
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
-  }
-  .news-title {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0 0 0.3rem 0;
-    color: #0073e6;
-    text-decoration: none;
-  }
-  .news-summary {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0 0 0.5rem 0;
-  }
-  .news-date {
-    font-size: 0.85rem;
-    color: #999;
-  }
-  .news-title:hover {
-    text-decoration: underline;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econews for 20s-30s</title>
+    <style>
+        /* 기본 스타일 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 전체적인 폰트 및 배경색 설정 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 컨테이너 스타일 */
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            background-color: #ffffff;
+            padding: 2rem 0;
+            border-bottom: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        .main-content {
+            flex: 1;
+            padding: 40px 0;
+        }
+
+        /* 뉴스 카드 그리드 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* 뉴스 카드 스타일 */
+        .news-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .news-card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card-category {
+            font-size: 0.8rem;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .news-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .news-card-description {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .news-card-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            margin-top: auto;
+        }
+        
+        .news-card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 푸터 스타일 */
+        .footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>청년 경제 뉴스로 배우기</h1>
-  <p>20~30대를 위한 신뢰성 있는 경제 뉴스</p>
-</header>
-<main>
-  <ul class="news-list">
-    <li class="news-item">
-      <a href="https://news.example.com/article1" target="_blank" class="news-title">[경제] 2025년 경제 성장률 전망</a>
-      <p class="news-summary">전문가들은 2025년 한국 경제가 3% 성장할 것으로 전망하고 있습니다...</p>
-      <time class="news-date" datetime="2025-10-24">2025-10-24</time>
-    </li>
-    <li class="news-item">
-      <a href="https://news.example.com/article2" target="_blank" class="news-title">정부, 청년 주택 지원 정책 발표</a>
-      <p class="news-summary">청년층 주택 마련 부담을 덜어주기 위해 다양한 지원책이 마련되었습니다...</p>
-      <time class="news-date" datetime="2025-10-23">2025-10-23</time>
-    </li>
-    <li class="news-item">
-      <a href="https://news.example.com/article3" target="_blank" class="news-title">금리 인상과 청년 재테크 전략</a>
-      <p class="news-summary">최근 금리 인상이 지속되면서 청년들의 재테크 전략에도 변화가 필요해지고 있습니다...</p>
-      <time class="news-date" datetime="2025-10-22">2025-10-22</time>
-    </li>
-  </ul>
-</main>
+
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <h1>Econews for 20s-30s</h1>
+            <p>2030 청년들을 위한 경제 뉴스 큐레이션</p>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="container">
+            <div class="news-grid">
+                
+                <!-- 뉴스 카드 1: 청년 고용 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">고용</span>
+                        <h2 class="news-card-title">청년 고용률 17개월째 하락, 양질의 일자리 감소</h2>
+                        <p class="news-card-description">청년층(15~29세) 고용률이 금융위기 이후 최장 기간 하락세를 보이고 있습니다. 노인 일자리는 증가했지만 청년들의 눈높이에 맞는 일자리는 줄어들고 있다는 분석입니다.</p>
+                        <a href="https://www.yna.co.kr/view/AKR20251018131300002" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 뉴스 카드 2: 주거 문제 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">부동산</span>
+                        <h2 class="news-card-title">고물가·고금리에 심화되는 청년 주거 부담</h2>
+                        <p class="news-card-description">1인 가구 청년 5명 중 4명은 전·월세에 거주하며, 보증금 마련을 위한 대출 비율이 중·장년층보다 월등히 높은 것으로 나타나 채무 구조 악화가 우려됩니다.</p>
+                        <a href="https://www.edaily.co.kr/news/read?newsId=01223446635574824&mediaCodeNo=257" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 뉴스 카드 3: 투자 트렌드 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">재테크</span>
+                        <h2 class="news-card-title">젊은 세대의 부상: 30억 이상 자산가 중 2030 비중 급증</h2>
+                        <p class="news-card-description">자산 30억 원 이상 초고액자산가 고객 중 20~30대 젊은 세대의 유입이 두드러지게 증가했습니다. 이들은 채권 및 해외 주식 등 글로벌 자산 다각화에 높은 관심을 보입니다.</p>
+                        <a href="https://www.sedaily.com/NewsView/2D86I78EXC" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+                
+                <!-- 뉴스 카드 4: 소비 트렌드 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">라이프스타일</span>
+                        <h2 class="news-card-title">'가성비'에 집중하는 청년들, 불황 속 달라진 직업관</h2>
+                        <p class="news-card-description">고물가 시대에 '플렉스'나 '욜로' 대신 '가성비'가 청년층의 핵심 소비 키워드로 떠올랐습니다. 직장을 선택하는 기준에서도 연봉과 워라밸이 커리어 성장보다 우선시되고 있습니다.</p>
+                        <a href="https://www.fnnews.com/news/202301051515286411" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 뉴스 카드 5: 파이어족 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">트렌드</span>
+                        <h2 class="news-card-title">빠른 은퇴를 꿈꾸는 '파이어족' 20대의 새로운 인생 목표</h2>
+                        <p class="news-card-description">일찌감치 자산을 모아 30~40대에 은퇴하는 '파이어족'이 젊은 세대의 새로운 희망으로 떠오르고 있습니다. 전문가들은 투자는 빠를수록 복리 효과를 누릴 수 있다고 조언합니다.</p>
+                        <a href="https://www.joongang.co.kr/article/25281896" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 뉴스 카드 6: 은행 연체율 -->
+                <article class="news-card">
+                    <div class="news-card-content">
+                        <span class="news-card-category">금융</span>
+                        <h2 class="news-card-title">국내은행 대출 연체율 소폭 상승, 가계 부채 부담 증가</h2>
+                        <p class="news-card-description">최근 국내은행의 원화 대출 연체율이 소폭 상승하며 2개월째 오름세를 이어가고 있습니다. 이는 가계의 채무 상환 부담이 커지고 있음을 시사합니다.</p>
+                        <a href="https://www.yna.co.kr/view/AKR20251024003651071" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Econews for 20s-30s. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
