@@ -1,178 +1,210 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FlashPL — 2025 프리미어리그 뉴스 (간결한 해설)</title>
-  <meta name="description" content="20-30대를 위한 간결하고 신뢰성 있는 2025 프리미어리그 뉴스 허브. 공식 기사·주요 언론 링크와 짧은 해설을 제공합니다.">
-  <style>
-    /* 미니멀/심플 디자인 (전문성 강조) */
-    :root{
-      --bg:#ffffff; --text:#0b0b0b; --muted:#6b7280; --accent:#0b5fff;
-      --card-bg:#fbfbfd; --radius:14px; --max-width:980px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;}
-    body{
-      margin:0; background:var(--bg); color:var(--text);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      display:flex; align-items:flex-start; justify-content:center; padding:32px;
-    }
-    .wrap{width:100%; max-width:var(--max-width);}
-    header{display:flex; align-items:center; gap:16px; margin-bottom:20px;}
-    .logo{
-      width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,#0b5fff,#6a8cff);
-      display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:20px;
-      box-shadow:0 6px 20px rgba(11,95,255,0.12);
-    }
-    h1{font-size:20px; margin:0;}
-    p.lead{margin:6px 0 0; color:var(--muted); font-size:14px;}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>서울 근교 — 해루질 가능한 캠핑장 (30·40대용)</title>
+<meta name="description" content="서울 근교에서 해루질(갯벌 체험)이 가능한 분위기 좋은 캠핑장 모음. 30~40대를 위한 미니멀·신뢰성 중심 페이지.">
+<style>
+  :root{
+    --bg:#fff; --text:#0b1220; --muted:#6b7280; --accent:#0b75ff;
+    --card:#fbfdff; --radius:12px; --maxw:1100px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    display:flex; justify-content:center; padding:28px;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{width:100%; max-width:var(--maxw);}
+  header{display:flex; gap:14px; align-items:center; margin-bottom:18px;}
+  .brand{width:56px; height:56px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+         background:linear-gradient(135deg,#0b75ff,#6aa7ff); color:white; font-weight:700; font-size:18px;}
+  h1{margin:0; font-size:18px;}
+  p.lead{margin:4px 0 0; color:var(--muted); font-size:13px;}
 
-    /* layout */
-    .grid{display:grid; grid-template-columns: 1fr 320px; gap:20px;}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr;} .sidebar{order:2;} }
+  .grid{display:grid; grid-template-columns: 1fr 320px; gap:18px;}
+  @media (max-width:960px){ .grid{grid-template-columns:1fr;} .sidebar{order:2} }
 
-    /* article list */
-    .card{
-      background:var(--card-bg); border-radius:var(--radius); padding:18px; box-shadow:0 6px 18px rgba(11,15,30,0.04);
-      border:1px solid rgba(11,15,30,0.03);
-    }
-    .article{display:flex; gap:14px; padding:12px 0; border-bottom:1px solid rgba(11,15,30,0.04);}
-    .article:last-child{border-bottom:0;}
-    .meta{flex:1;}
-    .kicker{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em;}
-    .title{font-size:16px; margin:6px 0; font-weight:600;}
-    .excerpt{font-size:13px; color:var(--muted); margin:6px 0 8px;}
-    .source-row{display:flex; gap:10px; align-items:center; font-size:12px; color:var(--muted);}
-    .badge{padding:6px 8px; background:rgba(11,95,255,0.08); color:var(--accent); border-radius:8px; font-weight:600; font-size:12px;}
+  .card{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:0 10px 30px rgba(11,18,40,0.04);
+        border:1px solid rgba(11,18,40,0.04);}
+  .camp-list{display:flex; flex-direction:column; gap:12px;}
+  .camp{
+    display:flex; gap:12px; padding:12px; border-radius:10px; align-items:flex-start;
+    background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+    border:1px solid rgba(11,18,40,0.03);
+  }
+  .thumb{width:150px; height:100px; flex:0 0 150px; border-radius:8px; overflow:hidden; background:#eef4ff; display:flex; align-items:center; justify-content:center;}
+  .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .meta{flex:1}
+  .kicker{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em;}
+  .title{font-size:15px; margin:6px 0; font-weight:700;}
+  .desc{font-size:13px; color:var(--muted); margin-bottom:8px;}
+  .links{display:flex; gap:8px; flex-wrap:wrap;}
+  .links a{font-size:13px; color:var(--accent); text-decoration:none; border-radius:8px; padding:6px 8px; border:1px solid rgba(11,117,255,0.08); background:rgba(11,117,255,0.03);}
 
-    /* sidebar */
-    .sidebar .card{position:sticky; top:24px;}
-    .small-list{display:flex; flex-direction:column; gap:8px;}
-    .small-item{padding:10px; border-radius:10px; background:white; border:1px solid rgba(11,15,30,0.03); font-size:13px; color:var(--muted);}
-    .cta{display:inline-block; margin-top:12px; text-decoration:none; padding:8px 12px; border-radius:10px; border:1px solid rgba(11,95,255,0.12); color:var(--accent); font-weight:600;}
+  .note{font-size:13px; color:var(--muted); margin-top:12px;}
 
-    footer{margin-top:20px; color:var(--muted); font-size:13px; text-align:center;}
-    a{text-decoration:none; color:inherit;}
-    a.link{color:var(--accent);}
-  </style>
+  /* sidebar */
+  .sidebar .card{position:sticky; top:22px;}
+  .mini{font-size:13px; color:var(--muted); line-height:1.5;}
+  footer{margin-top:18px; text-align:center; color:var(--muted); font-size:13px;}
+  a.small{color:var(--muted); text-decoration:underline;}
+</style>
 </head>
 <body>
-  <main class="wrap" aria-label="FlashPL — Premier League 2025">
+  <main class="wrap" role="main" aria-labelledby="site-title">
     <header>
-      <div class="logo">PL</div>
+      <div class="brand">해루</div>
       <div>
-        <h1>FlashPL</h1>
-        <p class="lead">간결한 해설 · 신뢰도 높은 기사 링크 · 20·30대를 위한 프리미어리그 뉴스 허브</p>
+        <h1 id="site-title">서울 근교 — 해루질 가능한 캠핑장</h1>
+        <p class="lead">30·40대를 위한 분위기 좋은 오션뷰·갯벌 체험 캠핑장만 선별했습니다. (실제 운영 정보·사진 링크 포함)</p>
       </div>
     </header>
 
     <section class="grid">
-      <!-- MAIN COLUMN -->
+      <!-- main -->
       <div>
-        <div class="card" role="region" aria-labelledby="top-news">
-          <h2 id="top-news" style="margin:0 0 10px 0;">핫 토픽 (빠른 개요)</h2>
+        <div class="card" aria-label="캠핑장 목록">
+          <h2 style="margin:0 0 12px 0;">추천 캠핑장 (서울 기준 1~2시간대)</h2>
 
-          <!-- Article 1 -->
-          <article class="article" aria-labelledby="a1">
-            <div class="meta">
-              <div class="kicker">라운드·순위 업데이트</div>
-              <div id="a1" class="title">현재 시즌 순위 & 경기 리포트</div>
-              <div class="excerpt">
-                시즌 중간 순위, 주요 경기 결과와 포인트 표를 간단히 요약합니다. 자세한 순위표와 실시간 업데이트는 공식 집계 및 주요 매체를 참조하세요.
-              </div>
-              <div class="source-row">
-                <span class="badge">Standings</span>
-                <a class="link" href="https://www.nbcsports.com/soccer" target="_blank" rel="noopener">NBC Sports — Premier League standings</a>
-              </div>
-            </div>
-          </article>
+          <div class="camp-list">
 
-          <!-- Article 2 -->
-          <article class="article" aria-labelledby="a2">
-            <div class="meta">
-              <div class="kicker">이적시장</div>
-              <div id="a2" class="title">여름 이적 & 클럽별 영입 정리</div>
-              <div class="excerpt">
-                여름 이적 시장 마감 후 클럽별 주요 영입·이적 요건(공식 발표 기준)을 모아 둔 요약입니다. 구단 공식 페이지와 트랜스퍼 센터를 확인하세요.
+            <!-- 1 -->
+            <article class="camp" aria-labelledby="c1">
+              <figure class="thumb" aria-hidden="true">
+                <!-- 실제 이미지가 있다면 src를 여기에 교체하세요 -->
+                <img src="data:image/svg+xml;utf8,
+                  <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+                    <rect width='100%' height='100%' fill='%23e8f2ff'/>
+                    <g fill='%230b75ff' font-family='Arial' font-size='28' font-weight='700'>
+                      <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle'>영종도</text>
+                    </g>
+                  </svg>" alt="영종도 힐링캠프 이미지 (대체)">
+              </figure>
+              <div class="meta">
+                <div class="kicker">인천 — 해안형 글램핑/노지</div>
+                <h3 id="c1" class="title">영종도 힐링캠프 (영종도 / 을왕리 인근)</h3>
+                <p class="desc">바닷가 바로 옆에 위치한 글램핑·노지형 캠핑장. 썰물 시 갯벌에서 조개·작은 해산물 체험(해루질) 가능하다는 리뷰가 많습니다. 도심에서 1시간 내 접근이 좋아 30·40대 야간 산책 & 분위기 있는 캠핑에 적합합니다.</p>
+                <div class="links">
+                  <a href="https://www.campingtalk.me/booking/camp/3225" target="_blank" rel="noopener">상세/사진(캠핑톡)</a>
+                  <a href="https://www.5gcamp.com/?c=camping&m=camping&page=view&uid=2883" target="_blank" rel="noopener">리뷰/정보(5Gcamp)</a>
+                </div>
+                <p class="note">출처·사진 확인: campingtalk · 5Gcamp. </p>
               </div>
-              <div class="source-row">
-                <span class="badge">Transfers</span>
-                <a class="link" href="https://www.premierleague.com/transfers" target="_blank" rel="noopener">PremierLeague.com — Transfer centre</a>
-              </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Article 3 -->
-          <article class="article" aria-labelledby="a3">
-            <div class="meta">
-              <div class="kicker">주요 단일 기사</div>
-              <div id="a3" class="title">구단별 주요 영입(예: 리버풀 영입 보도)</div>
-              <div class="excerpt">
-                로이터/공신력 있는 매체의 단일 영입 기사(계약·이적료·코멘트 포함)를 첨부하여 신뢰성 높은 근거를 제공합니다.
+            <!-- 2 -->
+            <article class="camp" aria-labelledby="c2">
+              <figure class="thumb" aria-hidden="true">
+                <img src="data:image/svg+xml;utf8,
+                  <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+                    <rect width='100%' height='100%' fill='%23fff5e6'/>
+                    <g fill='%23ff7a00' font-family='Arial' font-size='26' font-weight='700'>
+                      <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle'>강화도</text>
+                    </g>
+                  </svg>" alt="강화도 노을 캠핑장 이미지 (대체)">
+              </figure>
+              <div class="meta">
+                <div class="kicker">강화도 — 갯벌·노지</div>
+                <h3 id="c2" class="title">강화도 외포리 / 동막 해변 캠핑 (노지/소규모 캠핑장 다수)</h3>
+                <p class="desc">강화도 외포리·동막 지역은 갯벌이 넓어 해루질을 즐기는 사람들이 많습니다. 노지 캠핑과 소규모 캠핑장이 산재해 있어 '갯벌 체험'을 목적으로 방문하기 좋습니다. (공영 야영지/민간 캠핑장 정보 필수 확인)</p>
+                <div class="links">
+                  <a href="https://www.campinginfo.co.kr/2025/04/blog-post_62.html" target="_blank" rel="noopener">갯벌·노지 정보(캠핑인포)</a>
+                  <a href="https://www.5gcamp.com/?_ajax=air_new&m=camping&uid=3930&x=" target="_blank" rel="noopener">강화도 캠핑장 예시(5Gcamp)</a>
+                </div>
+                <p class="note">갯벌 체험·해루질 관련 정보 출처. 현지 규정(채집 금지 구역/시기)을 확인하세요. :contentReference[oaicite:2]{index=2}</p>
               </div>
-              <div class="source-row">
-                <span class="badge">Report</span>
-                <a class="link" href="https://www.reuters.com" target="_blank" rel="noopener">Reuters — club transfer reports</a>
-              </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Article 4 -->
-          <article class="article" aria-labelledby="a4">
-            <div class="meta">
-              <div class="kicker">매치 리포트</div>
-              <div id="a4" class="title">경기별 하이라이트 & 분석</div>
-              <div class="excerpt">
-                해당 라운드의 주요 경기(득점자·결정적 장면·전술 포인트)를 짧게 설명하고, 원문 기사로 연결합니다.
+            <!-- 3 -->
+            <article class="camp" aria-labelledby="c3">
+              <figure class="thumb" aria-hidden="true">
+                <img src="data:image/svg+xml;utf8,
+                  <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+                    <rect width='100%' height='100%' fill='%23e6ffe8'/>
+                    <g fill='%2300aa66' font-family='Arial' font-size='26' font-weight='700'>
+                      <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle'>영흥도</text>
+                    </g>
+                  </svg>" alt="영흥도 농어바위캠핑장 이미지 (대체)">
+              </figure>
+              <div class="meta">
+                <div class="kicker">인천 영흥도 — 갯벌체험형</div>
+                <h3 id="c3" class="title">영흥도 농어바위캠핑장 (갯벌·장화대여 사례 존재)</h3>
+                <p class="desc">영흥도 인근 캠핑장은 갯벌 체험(해루질) 편의가 잘 갖춰진 곳이 있습니다. 일부 캠핑장은 장화 대여·갯벌 체험 프로그램을 운영하니 사전문의로 확인하면 편합니다.</p>
+                <div class="links">
+                  <a href="https://bohemihan.tistory.com/entry/%EC%9D%B8%EC%B2%9C-%EC%98%81%ED%9D%A5%EB%8F%84%EB%86%8D%EC%96%B4%EB%B0%94%EC%9C%84%EC%BA%A0%ED%95%91%EC%9E%A5-%EC%86%94%EC%A7%81%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">이용후기(티스토리)</a>
+                </div>
+                <p class="note">후기에선 '관리실에서 장화 대여' 등 편의 제공 사례를 확인할 수 있습니다. :contentReference[oaicite:3]{index=3}</p>
               </div>
-              <div class="source-row">
-                <span class="badge">Match</span>
-                <a class="link" href="https://www.espn.com/soccer" target="_blank" rel="noopener">ESPN — Match updates</a>
-              </div>
-            </div>
-          </article>
+            </article>
 
+            <!-- 4 -->
+            <article class="camp" aria-labelledby="c4">
+              <figure class="thumb" aria-hidden="true">
+                <img src="data:image/svg+xml;utf8,
+                  <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+                    <rect width='100%' height='100%' fill='%23eefcff'/>
+                    <g fill='%230066aa' font-family='Arial' font-size='26' font-weight='700'>
+                      <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle'>대부도</text>
+                    </g>
+                  </svg>" alt="대부도 푸른섬 캠핑장 이미지 (대체)">
+              </figure>
+              <div class="meta">
+                <div class="kicker">경기도 안산 대부도 — 오션뷰/갯벌</div>
+                <h3 id="c4" class="title">푸른섬 캠핑장 (대부도) — 갯벌·오션뷰</h3>
+                <p class="desc">대부도는 서울 근교 오션뷰 캠핑장으로 인기. 갯벌 체험과 산책로가 있어 해루질을 하며 분위기 있는 캠핑을 즐기기 좋습니다. 데크·파쇄석 등 사이트 타입이 다양합니다.</p>
+                <div class="links">
+                  <a href="https://www.camppick.com/campsites/2253/view" target="_blank" rel="noopener">캠프픽 — 푸른섬 정보</a>
+                </div>
+                <p class="note">캠프픽 등 예약/후기 페이지에서 사진·실제 운영 현황을 확인하세요. :contentReference[oaicite:4]{index=4}</p>
+              </div>
+            </article>
+
+          </div>
+
+          <p class="note">안전/법적 주의: 갯벌 채집(조개/해산물)은 지역별 규제·어촌계 관할이 있을 수 있습니다. 방문 전 '채집 허용 여부'와 '보호기간(번식기)'을 반드시 확인하세요.</p>
         </div>
 
-        <!-- Quick explainer / how to read the news -->
-        <div class="card" style="margin-top:16px;">
-          <h3 style="margin:0 0 8px 0;">뉴스로 배우는 팁</h3>
-          <ol style="margin:0; color:var(--muted); font-size:14px; padding-left:18px;">
-            <li>기사 제목 → 핵심 문장(첫 문단) → 출처 순으로 읽으세요.</li>
-            <li>이적 관련 수치는 구단·리그 공식 발표를 우선 확인하세요.</li>
-            <li>전술·분석은 매치 리포트와 함께 영상 리플레이를 병행하면 이해가 빠릅니다.</li>
-          </ol>
+        <!-- how-to -->
+        <div class="card" style="margin-top:12px;">
+          <h3 style="margin:0 0 8px 0;">해루질(갯벌 체험) 팁 — 30·40대를 위한 간단 가이드</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:14px;">
+            <li>저조(썰물) 시간을 확인: 조수표(기상청/네이버 조수표 등)에서 썰물 시간을 미리 파악하세요.</li>
+            <li>안전장비: 장화, 장갑, 손전등(야간 해루질 시), 소형삽/바구니를 준비.</li>
+            <li>환경 준수: 어린 개체나 번식기 생물은 채집하지 말고, 어촌계 규정과 캠핑장 안내를 따르세요.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- SIDEBAR -->
+      <!-- sidebar -->
       <aside class="sidebar">
         <div class="card">
-          <h4 style="margin:0 0 8px 0;">빠른 링크</h4>
-          <div class="small-list">
-            <a class="small-item" href="https://www.premierleague.com" target="_blank" rel="noopener">프리미어리그 공식</a>
-            <a class="small-item" href="https://www.reuters.com/lifestyle/sports" target="_blank" rel="noopener">Reuters — Football</a>
-            <a class="small-item" href="https://www.espn.com/soccer" target="_blank" rel="noopener">ESPN — Soccer</a>
-            <a class="small-item" href="https://www.nbcsports.com/soccer" target="_blank" rel="noopener">NBC Sports — PL standings</a>
-            <a class="small-item" href="https://www.skysports.com/football" target="_blank" rel="noopener">Sky Sports — Transfers</a>
+          <h4 style="margin:0 0 8px 0;">빠른 링크 & 확인용</h4>
+          <p class="mini">사진·예약·운영 시간은 각 페이지에서 최신 내용을 확인하세요.</p>
+          <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+            <a class="links" href="https://www.campingtalk.me/booking/camp/3225" target="_blank" rel="noopener">영종도 힐링캠프 — 사진/예약</a>
+            <a class="links" href="https://www.5gcamp.com" target="_blank" rel="noopener">5Gcamp — 캠핑장 종합정보</a>
+            <a class="links" href="https://www.campinginfo.co.kr" target="_blank" rel="noopener">CampingInfo — 리뷰/팁</a>
+            <a class="links" href="https://www.camppick.com" target="_blank" rel="noopener">Camppick — 캠핑장 DB</a>
           </div>
-
-          <p style="margin:12px 0 0; font-size:13px; color:var(--muted);">
-            신뢰도: 공식 사이트(플레이어·리그), 로이터/AFP 같은 해외 통신사, 그리고 주요 스포츠 미디어 순으로 우선 확인하세요.
-          </p>
+          <p style="margin-top:10px;" class="mini">원하시면 이 템플릿을 기준으로 <strong>각 캠핑장별 실제 사진(웹에서 가져온 이미지)</strong>로 `img src`를 채워 넣어 드리겠습니다. 사진 출처와 저작권 표기도 함께 넣어 드려요.</p>
         </div>
 
         <div class="card" style="margin-top:12px;">
-          <h4 style="margin:0 0 8px 0;">구독·설정</h4>
-          <p style="margin:0 0 8px 0; color:var(--muted); font-size:13px;">원하시면 최신 순위·주요기사만 추려 이메일 요약을 만드는 스니펫도 만들어 드립니다.</p>
-          <a class="cta" href="#subscribe">요약 이메일 템플릿 보기</a>
+          <h4 style="margin:0 0 8px 0;">예약 전 체크리스트</h4>
+          <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:13px;">
+            <li>어촌계/캠핑장 규정(채집 허용 여부)</li>
+            <li>주차·화장실·샤워시설 유무</li>
+            <li>저조 시간(썰물) 확인 — 안전 최우선</li>
+          </ul>
         </div>
       </aside>
     </section>
 
     <footer>
-      © 2025 FlashPL · Sources: PremierLeague.com · NBC Sports · Reuters · ESPN · Sky Sports
+      © 2025 해루캠프 · 수집 출처(예시): campingtalk · 5Gcamp · CampingInfo · Camppick. 사진·운영 정보는 링크 원문을 확인하세요. :contentReference[oaicite:5]{index=5}
     </footer>
   </main>
 </body>
