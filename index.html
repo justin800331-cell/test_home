@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Econews for 20s-30s</title>
+    <title>PL News for 20s-30s</title>
     <style>
         /* 기본 스타일 리셋 */
         * {
@@ -25,8 +25,8 @@
 
         /* 컨테이너 스타일 */
         .container {
-            width: 80%;
-            max-width: 1100px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -40,9 +40,11 @@
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #343a40;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .header p {
@@ -60,7 +62,7 @@
         /* 뉴스 카드 그리드 */
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -68,44 +70,45 @@
         .news-card {
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
         }
 
         .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
         }
 
         .news-card-content {
-            padding: 20px;
+            padding: 25px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .news-card-category {
-            font-size: 0.8rem;
+        .news-card-tag {
+            font-size: 0.85rem;
             color: #007bff;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
 
         .news-card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 15px;
-            flex-grow: 1;
+            line-height: 1.3;
         }
 
-        .news-card-description {
-            font-size: 0.95rem;
-            color: #6c757d;
+        .news-card-summary {
+            font-size: 1rem;
+            color: #495057;
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .news-card-link {
@@ -114,6 +117,7 @@
             color: #007bff;
             font-weight: 600;
             margin-top: auto;
+            align-self: flex-start;
         }
         
         .news-card-link:hover {
@@ -125,7 +129,7 @@
             background-color: #343a40;
             color: #f8f9fa;
             text-align: center;
-            padding: 20px 0;
+            padding: 25px 0;
             margin-top: auto;
         }
     </style>
@@ -135,8 +139,8 @@
     <!-- 헤더 -->
     <header class="header">
         <div class="container">
-            <h1>Econews for 20s-30s</h1>
-            <p>2030 청년들을 위한 경제 뉴스 큐레이션</p>
+            <h1>PL News for 20s-30s</h1>
+            <p>프리미어리그 소식을 가장 빠르고 흥미롭게</p>
         </div>
     </header>
 
@@ -145,66 +149,65 @@
         <div class="container">
             <div class="news-grid">
                 
-                <!-- 뉴스 카드 1: 청년 고용 -->
+                <!-- 뉴스 카드 1: 손흥민 EPL 복귀설 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">고용</span>
-                        <h2 class="news-card-title">청년 고용률 17개월째 하락, 양질의 일자리 감소</h2>
-                        <p class="news-card-description">청년층(15~29세) 고용률이 금융위기 이후 최장 기간 하락세를 보이고 있습니다. 노인 일자리는 증가했지만 청년들의 눈높이에 맞는 일자리는 줄어들고 있다는 분석입니다.</p>
-                        <a href="https://www.yna.co.kr/view/AKR20251018131300002" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">이적설</span>
+                        <h2 class="news-card-title">손흥민, '베컴 조항'으로 EPL 복귀 가능성 제기</h2>
+                        <p class="news-card-summary">LAFC로 이적한 손흥민이 계약서의 특별 조항을 통해 MLS 비시즌 기간 동안 유럽 무대로 임대 복귀할 수 있다는 보도가 나왔습니다. 친정팀 토트넘으로의 단기 복귀 가능성이 팬들의 기대를 모으고 있습니다.</p>
+                        <a href="https://www.sportalkorea.com/news/view.php?gisa_uniq=2025102407577741" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
 
-                <!-- 뉴스 카드 2: 주거 문제 -->
+                <!-- 뉴스 카드 2: 맨유의 반등 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">부동산</span>
-                        <h2 class="news-card-title">고물가·고금리에 심화되는 청년 주거 부담</h2>
-                        <p class="news-card-description">1인 가구 청년 5명 중 4명은 전·월세에 거주하며, 보증금 마련을 위한 대출 비율이 중·장년층보다 월등히 높은 것으로 나타나 채무 구조 악화가 우려됩니다.</p>
-                        <a href="https://www.edaily.co.kr/news/read?newsId=01223446635574824&mediaCodeNo=257" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">경기 분석</span>
+                        <h2 class="news-card-title">맨유, 10년 만에 안필드 승리... 반등의 서막?</h2>
+                        <p class="news-card-summary">맨체스터 유나이티드가 해리 매과이어의 결승골에 힘입어 10년 만에 리버풀 원정에서 승리를 거뒀습니다. 이번 승리가 부진에 빠졌던 팀의 분위기를 바꾸는 전환점이 될지 주목됩니다.</p>
+                        <a href="https://www.premierleague.com/news/4134105" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
 
-                <!-- 뉴스 카드 3: 투자 트렌드 -->
+                <!-- 뉴스 카드 3: 맨시티와 홀란드 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">재테크</span>
-                        <h2 class="news-card-title">젊은 세대의 부상: 30억 이상 자산가 중 2030 비중 급증</h2>
-                        <p class="news-card-description">자산 30억 원 이상 초고액자산가 고객 중 20~30대 젊은 세대의 유입이 두드러지게 증가했습니다. 이들은 채권 및 해외 주식 등 글로벌 자산 다각화에 높은 관심을 보입니다.</p>
-                        <a href="https://www.sedaily.com/NewsView/2D86I78EXC" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">선수 소식</span>
+                        <h2 class="news-card-title">홀란드, 호날두 기록 경신하며 득점 행진 계속</h2>
+                        <p class="news-card-summary">맨시티의 엘링 홀란드가 시즌 초반 놀라운 득점력을 과시하며 크리스티아누 호날두의 기록을 넘어섰습니다. 그의 발끝에서 팀의 승패가 결정되고 있다는 분석이 나옵니다.</p>
+                        <a href="https://www.si.com/soccer/premier-league/news/erling-haaland-breaks-cristiano-ronaldo-goal-record-with-latest-strike" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
                 
-                <!-- 뉴스 카드 4: 소비 트렌드 -->
+                <!-- 뉴스 카드 4: 아스날의 과제 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">라이프스타일</span>
-                        <h2 class="news-card-title">'가성비'에 집중하는 청년들, 불황 속 달라진 직업관</h2>
-                        <p class="news-card-description">고물가 시대에 '플렉스'나 '욜로' 대신 '가성비'가 청년층의 핵심 소비 키워드로 떠올랐습니다. 직장을 선택하는 기준에서도 연봉과 워라밸이 커리어 성장보다 우선시되고 있습니다.</p>
-                        <a href="https://www.fnnews.com/news/202301051515286411" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">팀 동향</span>
+                        <h2 class="news-card-title">'무패행진' 아스날, 진짜 시험대는 지금부터</h2>
+                        <p class="news-card-summary">개막 후 무패를 달리며 리그 선두를 질주하고 있는 아스날. 하지만 주장 외데고르의 부상 공백과 험난한 11월 일정이 우승 경쟁의 중대 고비가 될 전망입니다.</p>
+                        <a href="https://www.skysports.com/football/news/11670/13240212/arsenal-fixtures" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
 
-                <!-- 뉴스 카드 5: 파이어족 -->
+                <!-- 뉴스 카드 5: 첼시의 젊은 피 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">트렌드</span>
-                        <h2 class="news-card-title">빠른 은퇴를 꿈꾸는 '파이어족' 20대의 새로운 인생 목표</h2>
-                        <p class="news-card-description">일찌감치 자산을 모아 30~40대에 은퇴하는 '파이어족'이 젊은 세대의 새로운 희망으로 떠오르고 있습니다. 전문가들은 투자는 빠를수록 복리 효과를 누릴 수 있다고 조언합니다.</p>
-                        <a href="https://www.joongang.co.kr/article/25281896" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">유망주</span>
+                        <h2 class="news-card-title">첼시, 기록적 챔스 대승 이끈 '신성'들에 주목</h2>
+                        <p class="news-card-summary">엔조 마레스카 감독이 이끄는 첼시가 챔피언스리그에서 기록적인 승리를 거둔 가운데, 어린 선수들의 활약이 팀에 새로운 활력을 불어넣고 있습니다.</p>
+                        <a href="https://www.si.com/soccer/chelsea/news/a-special-night-enzo-maresca-reacts-to-chelseas-record-breaking-champions-league-win" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
 
-                <!-- 뉴스 카드 6: 은행 연체율 -->
+                <!-- 뉴스 카드 6: 손흥민 EPL 톱15 후보 -->
                 <article class="news-card">
                     <div class="news-card-content">
-                        <span class="news-card-category">금융</span>
-                        <h2 class="news-card-title">국내은행 대출 연체율 소폭 상승, 가계 부채 부담 증가</h2>
-                        <p class="news-card-description">최근 국내은행의 원화 대출 연체율이 소폭 상승하며 2개월째 오름세를 이어가고 있습니다. 이는 가계의 채무 상환 부담이 커지고 있음을 시사합니다.</p>
-                        <a href="https://www.yna.co.kr/view/AKR20251024003651071" target="_blank" class="news-card-link">기사 전문 보기 &rarr;</a>
+                        <span class="news-card-tag">선수 위상</span>
+                        <h2 class="news-card-title">손흥민, EPL 역대 최고 골잡이 15인 후보 선정</h2>
+                        <p class="news-card-summary">비록 지금은 미국 MLS에서 활약하고 있지만, 손흥민이 프리미어리그 역사상 최고의 골잡이 중 한 명으로 인정받으며 15인의 후보에 이름을 올렸습니다.</p>
+                        <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1007932607" target="_blank" class="news-card-link">기사 원문 보기 &rarr;</a>
                     </div>
                 </article>
-
             </div>
         </div>
     </main>
@@ -212,7 +215,7 @@
     <!-- 푸터 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Econews for 20s-30s. All Rights Reserved.</p>
+            <p>&copy; 2025 PL News for 20s-30s. All Rights Reserved.</p>
         </div>
     </footer>
 
